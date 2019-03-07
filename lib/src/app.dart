@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'modules/ui/movie_list.dart';
+import 'package:flutter_bloc/src/modules/movies/ui/movie_list.dart';
+import 'package:flutter_bloc/src/modules/movies/ui/movie_detail.dart';
+
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-        theme: ThemeData.dark(),
+        theme: ThemeData.light(),
         home: Scaffold(
           body: MovieList(),
         ),
