@@ -8,7 +8,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-        theme: ThemeData.light(),
+        theme: ThemeData.dark(),
         home: Scaffold(
           body: MovieList(),
         ),

@@ -9,7 +9,7 @@ class MovieList extends StatelessWidget {
     bloc.fetchAllMovies();
     return Scaffold(
       appBar: AppBar(
-        title: Text('Popular Movies'),
+        title: Text('Popular Movies')
       ),
       body: StreamBuilder(
         stream: bloc.allMovies,
@@ -34,8 +34,12 @@ class MovieList extends StatelessWidget {
           return GestureDetector(
             onTap: () {
               Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MovieDetail(id: snapshot.data.results[index].id)),
+                context,
+                MaterialPageRoute(builder: (context) => MovieDetail(
+                  id: snapshot.data.results[index].id,
+                  title: snapshot.data.results[index].title
+                  )
+                ),
               );
             },
             child: Image.network(
