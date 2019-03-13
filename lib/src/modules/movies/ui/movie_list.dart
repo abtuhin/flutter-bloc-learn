@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/src/modules/movies/blocs/movie_detail_bloc_provider.dart';
 import 'package:flutter_bloc/src/modules/movies/ui/movie_detail.dart';
 import '../models/item_model.dart';
 import '../blocs/movies_bloc.dart';
@@ -69,10 +70,13 @@ class _MovieListState extends State<MovieList> {
   navigateDetail(ItemModel data, int index){
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => MovieDetail(
-          id: data.results[index].id,
-          title: data.results[index].title
-      )
+      MaterialPageRoute(builder: (context) =>
+        MovieDetailBlocProvider(
+          child: MovieDetail(
+              id: data.results[index].id,
+              title: data.results[index].title
+          )
+        )
       ),
     );
   }
