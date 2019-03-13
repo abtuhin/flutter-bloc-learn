@@ -12,7 +12,8 @@ class MovieBloc {
     _movieFetcher.sink.add(detailModel);
   }
 
-  dispose() {
+  dispose() async{
+    await _movieFetcher.drain();
     _movieFetcher.close();
   }
 }
